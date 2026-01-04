@@ -2,53 +2,88 @@
   <img src="assets/logo.png" alt="NanoVec Logo" width="200">
 </p>
 
-# NanoVec
+<h1 align="center">NanoVec</h1>
 
-NanoVec is a lightweight, high-performance vector database implemented in Rust, designed for edge computing and offline-first applications. It implements the HNSW (Hierarchical Navigable Small World) algorithm for efficient similarity search.
+<p align="center">
+  <strong>A lightweight, blazing-fast vector database for Edge Computing & Offline-first applications.</strong>
+</p>
 
-## Features
+<p align="center">
+  <img src="https://img.shields.io/badge/Rust-2024-orange?logo=rust" alt="Rust Version">
+  <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License">
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome">
+  <img src="https://img.shields.io/badge/Status-Beta-yellow" alt="Status">
+</p>
 
-- **Blazing Fast**: Uses HNSW for logarithmic-time similarity search.
-- **Memory Efficient**: Designed to handle large datasets even on devices with limited RAM.
-- **SIMD Optimized**: Leverages hardware acceleration for distance calculations.
-- **Multilingual Support**: Available in English and French.
-- **Modular Architecture**: Clean separation between core algorithms, storage, and API.
+---
 
-## Project Structure
+## 🚀 Why NanoVec?
 
-- `core/`: The "brain" of NanoVec, containing HNSW logic and vector operations.
-- `storage/`: Handles persistence and binary file formats (`.nvec`).
-- `api/`: Public interface and bindings (e.g., Python/Node.js).
-- `cli/`: Command-line interface for managing and querying databases.
+NanoVec is designed for developers who need high-performance similarity search without the overhead of heavy cloud-based solutions. Built in **Rust**, it offers:
 
-## Getting Started
+- ⚡ **Low Latency**: HNSW algorithm for logarithmic-time search.
+- 📉 **Tiny Footprint**: Optimized for devices with limited memory (Edge/Mobile).
+- 🛠️ **Zero-Copy Friendly**: Efficient serialization for fast I/O.
+- 🧪 **SIMD Powered**: Leveraging hardware acceleration for vector math.
 
-### Prerequisites
+## 🏗️ Architecture
 
-- Rust (Latest stable or 2024 edition)
-- Cargo
+NanoVec follows a strict modular design to allow flexibility and high performance.
 
-### Installation
+| Module | Responsibility | Key Features |
+| :--- | :--- | :--- |
+| **`core`** | Algorithmic Heart | HNSW implementation, SIMD metrics. |
+| **`storage`** | Persistence | Custom `.nvec` format, WAL, mmap support. |
+| **`api`** | Integration | Facade for developers, FFI (Python/Node). |
+| **`cli`** | Management | Command-line tools for DB management. |
+
+## 🛠️ Installation
 
 ```bash
-git clone https://github.com/yourusername/nanovec.git
+# Clone the repository
+git clone https://github.com/Tomefy5/nanovec.git
+
+# Navigate to the directory
 cd nanovec
+
+# Build for release
 cargo build --release
 ```
 
-### Usage
+## 📋 Quick Start
 
-```bash
-# Example command coming soon
-./target/release/nanovec-cli --help
+```rust
+use nanovec::api::NanoDB;
+
+fn main() {
+    // Create or load a database
+    let db = NanoDB::new("my_data.nvec");
+
+    // Insert a vector with metadata
+    db.insert(vec![0.12, 0.45, 0.78], "user_node_1");
+
+    // Perform a similarity search (Top-K)
+    let results = db.query(vec![0.10, 0.40, 0.70], 5);
+
+    println!("Top match: {:?}", results[0]);
+}
 ```
 
-## Documentation
+## 📖 Documentation
 
-Exhaustive documentation can be found in the `docs/` directory:
-- [Architecture](docs/architecture.md)
-- [Getting Started](docs/getting_started.md)
+Dive deeper into NanoVec's internals:
 
-## License
+- [Architecture Overview](docs/architecture.md)
+- [Full Getting Started Guide](docs/getting_started.md)
+- [French Version (README.fr.md)](README.fr.md)
 
-This project is licensed under the terms specified in the LICENSE file.
+## 🤝 Contributing
+
+We love contributions! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) to get started.
+
+## ⚖️ License
+
+Distributed under the **MIT License**. See `LICENSE` for more information.
+
+---
+<p align="center">Built with 🦀 by the NanoVec community.</p>
