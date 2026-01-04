@@ -1,0 +1,53 @@
+infos/
+
+.antigravity
+
+# Added by cargo
+
+/target
+
+# --- Rust Standard ---
+/target/
+**/*.rs.bk
+Cargo.lock
+# On ignore Cargo.lock SEULEMENT si c'est une lib pure.
+# Comme vous avez un workspace et un binaire CLI, il vaut mieux
+# garder Cargo.lock pour garantir que tout le monde a les mêmes versions.
+# Donc : ne mettez pas Cargo.lock si vous voulez être rigoureux,
+# ou mettez-le si vous voulez laisser les utilisateurs choisir leurs versions.
+# Pour un projet perso/app : NE L'IGNOREZ PAS (donc retirez la ligne Cargo.lock ci-dessus si présente)
+
+# --- IDEs & Editeurs ---
+# VS Code
+.vscode/
+*.code-workspace
+
+# IntelliJ / RustRover
+.idea/
+*.iml
+
+# Vim / Emacs
+*~
+*.swp
+*.swo
+
+# --- OS Files ---
+# Mac
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# --- Debugging & Profiling ---
+valgrind.out*
+perf.data
+perf.data.old
+
+# --- Fichiers de données locaux (pour vos tests) ---
+# Vous ne voulez pas commiter votre grosse base de vecteurs de test de 10Go !
+*.nvec
+*.bin
+data/
+tmp/

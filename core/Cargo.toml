@@ -1,0 +1,13 @@
+[package]
+name = "nanovec_core"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+thiserror = { workspace = true }
+serde = { workspace = true }
+rand = { workspace = true }
+bytemuck = { workspace = true }
+
+[dev-dependencies]
+criterion = { workspace = true } # Pour les benchmarks

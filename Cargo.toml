@@ -1,0 +1,22 @@
+[package]
+name = "nanovec"
+version = "0.1.0"
+edition = "2024"
+
+[workspace]
+members = ["api", "cli",
+    "core", "storage",
+    # "storage",
+    # "api",
+    # "cli"
+]
+
+resolver = "2"
+
+[workspace.dependencies]
+anyhow = "1.0"                         # Gestion d'erreur facile
+thiserror = "1.0"                      # Gestion d'erreur propre pour les libs
+serde = { version = "1.0", features = ["derive"] } # Sérialisation
+rand = "0.8"                           # Génération aléatoire
+criterion = "0.5"                      # Benchmarking
+bytemuck = { version = "1.14", features = ["derive"] } # Zero-copy casting

@@ -1,0 +1,2 @@
+# nanovec/clippy.toml
+avoid-breaking-exported-api = false

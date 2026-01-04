@@ -1,0 +1,17 @@
+# nanovec/rustfmt.toml
+
+# Utilise l'édition 2024 (la plus récente)
+edition = "2024"
+
+# Largeur de ligne (standard = 100, plus confortable que 80)
+max_width = 100
+
+# Utilise des heuristiques agressives pour compacter le code (plus lisible)
+use_small_heuristics = "Max"
+
+# Trie les imports alphabétiquement (comme "Organize Imports" en TS)
+reorder_imports = true
+group_imports = "StdExternalCrate"
+
+# Force les accolades même pour les if d'une ligne
+control_brace_style = "AlwaysSameLine"
