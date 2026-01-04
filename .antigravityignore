@@ -1,0 +1,37 @@
+# Build and package artifacts
+target/
+Cargo.lock
+**/node_modules/
+
+# Antigravity specific
+.antigravity/
+infos/
+
+# IDE and Editor files
+.vscode/
+*.code-workspace
+.idea/
+*.iml
+*~
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Version control
+.git/
+
+# Data and logs
+*.nvec
+*.bin
+data/
+tmp/
+valgrind.out*
+perf.data
+perf.data.old
+
+# Rust backups
+**/*.rs.bk
