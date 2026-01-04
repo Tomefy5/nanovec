@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo.png" alt="NanoVec Logo" width="200">
+</p>
+
 # NanoVec
 
 NanoVec is a lightweight, high-performance vector database implemented in Rust, designed for edge computing and offline-first applications. It implements the HNSW (Hierarchical Navigable Small World) algorithm for efficient similarity search.
