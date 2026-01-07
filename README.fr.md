@@ -73,8 +73,8 @@ fn main() {
 
 Explorez les détails de NanoVec :
 
-- [Vue d'ensemble de l'architecture](docs/architecture.md)
-- [Guide de démarrage complet](docs/getting_started.md)
+- [Vue d'ensemble de l'architecture](docs/architecture.fr.md)
+- [Guide de démarrage complet](docs/getting_started.fr.md)
 - [Version Anglaise (README.md)](README.md)
 
 ## 🤝 Contribuer
